@@ -49,12 +49,12 @@ namespace aspnet_get_started.Controllers.API
 		// POST api/<controller>
 		[Route]
 		[HttpPost]
-		public async Task<IEnumerable<Todo>> Post([FromBody] string text)
+		public async Task<IEnumerable<Todo>> Post([FromBody] Todo todo)
 		{
 			await this.client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(TodosController.Database, TodosController.Collection),
 												new Todo
 												{
-													Text = text,
+													Text = todo.Text,
 													Created = DateTime.Now
 												});
 			return this.Get();
