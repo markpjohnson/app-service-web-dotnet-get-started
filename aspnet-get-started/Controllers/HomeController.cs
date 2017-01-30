@@ -1,30 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Diagnostics;
 using System.Web.Mvc;
 
 namespace aspnet_get_started.Controllers
 {
-    public class HomeController : Controller
-    {
-        public ActionResult Index()
-        {
-            return View();
-        }
+	public class HomeController : Controller
+	{
+		public ActionResult Index()
+		{
+			Trace.TraceInformation("Loading home page");
+			return View();
+		}
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+		public ActionResult About()
+		{
+			Trace.TraceInformation("Loading about page");
+			ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+			return View();
+		}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+		public ActionResult Contact()
+		{
+			Trace.TraceInformation("Loading contact page");
+			ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-    }
+			return View();
+		}
+	}
 }
