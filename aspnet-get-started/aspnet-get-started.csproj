@@ -26,8 +26,8 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
-    <ApplicationInsightsResourceId>/subscriptions/7cb97533-0a52-4037-a51e-8b8d707367ad/resourcegroups/hillyard-demo/providers/microsoft.insights/components/hillyard-demo</ApplicationInsightsResourceId>
-    <ApplicationInsightsAnnotationResourceId>/subscriptions/7cb97533-0a52-4037-a51e-8b8d707367ad/resourcegroups/hillyard-demo/providers/microsoft.insights/components/hillyard-demo</ApplicationInsightsAnnotationResourceId>
+    <ApplicationInsightsResourceId>/subscriptions/7cb97533-0a52-4037-a51e-8b8d707367ad/resourcegroups/hillyard-demo/providers/microsoft.insights/components/hillyard-demo-redis</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/7cb97533-0a52-4037-a51e-8b8d707367ad/resourceGroups/hillyard-demo/providers/microsoft.insights/components/hillyard-demo-redis</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
