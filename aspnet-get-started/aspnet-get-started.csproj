@@ -174,7 +174,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\API\TodoController.cs" />
+    <Compile Include="Controllers\API\TodosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
@@ -223,7 +223,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Todo\Index.cshtml" />
+    <Content Include="Views\Todos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
