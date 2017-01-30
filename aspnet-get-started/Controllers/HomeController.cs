@@ -5,6 +5,7 @@ namespace aspnet_get_started.Controllers
 {
 	public class HomeController : Controller
 	{
+		[OutputCache(Duration = 30)]
 		public ActionResult Index()
 		{
 			Trace.TraceInformation("Loading home page");
