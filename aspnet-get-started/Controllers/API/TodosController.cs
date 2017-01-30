@@ -9,15 +9,15 @@ using Microsoft.Azure.Documents.Client;
 
 namespace aspnet_get_started.Controllers.API
 {
-	[RoutePrefix("api/todo")]
-	public class TodoController : ApiController
+	[RoutePrefix("api/todos")]
+	public class TodosController : ApiController
 	{
 		public const string Database = "TodoDb";
 		public const string Collection = "Todo";
 
 		private readonly DocumentClient client;
 
-		public TodoController()
+		public TodosController()
 		{
 			this.client = new DocumentClient(new Uri(ConfigurationManager.AppSettings["DocumentDbUri"]), ConfigurationManager.AppSettings["DocumentDbKey"]);
 		}
@@ -27,7 +27,7 @@ namespace aspnet_get_started.Controllers.API
 		[HttpGet]
 		public IEnumerable<Todo> Get()
 		{
-			return this.client.CreateDocumentQuery<Todo>(UriFactory.CreateDocumentCollectionUri(TodoController.Database, TodoController.Collection),
+			return this.client.CreateDocumentQuery<Todo>(UriFactory.CreateDocumentCollectionUri(TodosController.Database, TodosController.Collection),
 														new FeedOptions
 														{
 															MaxItemCount = -1
@@ -39,7 +39,7 @@ namespace aspnet_get_started.Controllers.API
 		[HttpGet]
 		public Todo Get(string id)
 		{
-			return this.client.CreateDocumentQuery<Todo>(UriFactory.CreateDocumentCollectionUri(TodoController.Database, TodoController.Collection),
+			return this.client.CreateDocumentQuery<Todo>(UriFactory.CreateDocumentCollectionUri(TodosController.Database, TodosController.Collection),
 														new FeedOptions
 														{
 															MaxItemCount = 1
@@ -51,7 +51,7 @@ namespace aspnet_get_started.Controllers.API
 		[HttpPost]
 		public async Task<IEnumerable<Todo>> Post([FromBody] string text)
 		{
-			await this.client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(TodoController.Database, TodoController.Collection),
+			await this.client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(TodosController.Database, TodosController.Collection),
 												new Todo
 												{
 													Text = text,
@@ -65,7 +65,7 @@ namespace aspnet_get_started.Controllers.API
 		[HttpDelete]
 		public async Task<IEnumerable<Todo>> Delete(string id)
 		{
-			await this.client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(TodoController.Database, TodoController.Collection, id));
+			await this.client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(TodosController.Database, TodosController.Collection, id));
 			return this.Get();
 		}
 	}
